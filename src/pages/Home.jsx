@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ArrowRight, Droplet, Wheat, Factory, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom'; // Add this import if using React Router
 
 function Home() {
   const [isVisible, setIsVisible] = useState(false);
@@ -37,17 +38,21 @@ function Home() {
             A Maharashtra based company engaged in dairy production,
             food processing, agriculture, and distribution services.
           </p>
-
+      
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-600">
+            <Link to={"/products"}>
             <button className="group bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center gap-2">
               Explore Our Products
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
-            
-            <button className="group bg-transparent border-2 border-white hover:bg-white hover:text-green-800 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
-              Contact Sales
-              <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </Link>
+            {/* Contact Sales Button with Link */}
+            <Link to="/contact">
+              <button className="group bg-transparent border-2 border-white hover:bg-white hover:text-green-800 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
+                Contact Sales
+                <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </Link>
           </div>
         </div>
 
@@ -83,7 +88,7 @@ function Home() {
               
               <div className="h-48 overflow-hidden relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1628088069254-d97fdd1f5f8a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKkTVwSYMTWpZTqiWBS3hmHdrQM5Umrx9PDQ&s" 
                   alt="Dairy Products" 
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
@@ -152,6 +157,46 @@ function Home() {
                   <li className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
                     Beverage production
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+              {/* Gold  Card */}
+            <div className="group relative bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-400 to-orange-600 opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+              
+              <div className="h-48 overflow-hidden relative">
+                <img 
+                  src="https://static.toiimg.com/thumb/msid-120576608,width-1280,height-720,resizemode-4/120576608.jpg" 
+                  alt="Gold Images" 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 text-white">
+                  <Factory className="w-8 h-8 mb-2" />
+                </div>
+              </div>
+              
+              <div className="p-6">
+                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors">
+                  Gold Manufacturing and Gold Trading 
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Gold manufacturing blends artisanal craftsmanship with organized refining, while gold trading spans physical exchanges and financial instruments, driven by cultural and investment demand.
+                </p>
+                <ul className="space-y-2 text-sm text-gray-500">
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+                  Gold Manufacturing
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+                   Gold Trading
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+                  Industry Dynamics
                   </li>
                 </ul>
               </div>

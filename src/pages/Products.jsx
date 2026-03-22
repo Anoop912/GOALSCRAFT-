@@ -10,7 +10,8 @@ import {
   Truck,
   Shield,
   Heart,
-  ChevronRight
+  ChevronRight,
+  CircleStar
 } from 'lucide-react';
 
 function Products() {
@@ -28,6 +29,7 @@ function Products() {
     { id: 'butter', name: 'Butter & Ghee', icon: Cookie },
     { id: 'icecream', name: 'Ice Cream', icon: IceCream },
     { id: 'processed', name: 'Processed', icon: Coffee },
+     { id: 'Gold', name: 'Gold', icon: CircleStar },
   ];
 
   const products = [
@@ -148,6 +150,16 @@ function Products() {
       image: "https://images.unsplash.com/photo-1612977512046-2bfc00a8b7f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80",
       description: "Convenient cheese slices for sandwiches and burgers.",
       price: "₹90/10 slices",
+      rating: 4.4,
+      badge: "Value Pack"
+    },
+     {
+      id: 13,
+      name: "Gold Biscuit",
+      category: "Gold",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFxKxtVNFmLyeHr9Jaftd_pzgAzcnsavynnQ&s",
+      description: "Gold Biscuits for sales",
+      price: "10g 22-karat ₹1,44,909",
       rating: 4.4,
       badge: "Value Pack"
     }

@@ -11,7 +11,10 @@ import {
   Thermometer,
   Package,
   CheckCircle,
-  Award
+  Award,
+  Coins, // Added for gold exchange
+  TrendingUp, // Added for stats icon
+  BarChart3 // Added for features
 } from 'lucide-react';
 
 function Services() {
@@ -85,6 +88,28 @@ function Services() {
     },
     {
       id: 4,
+      title: "Gold Exchange & Trading",
+      icon: Coins,
+      description: "Comprehensive gold trading services including physical bullion exchange, digital gold investments, and financial derivatives trading.",
+      fullDescription: "Our gold exchange division offers end-to-end gold trading solutions. From physical bullion trading to digital gold investments and futures contracts, we provide a secure and transparent platform for all your gold investment needs. We partner with leading exchanges like MCX and maintain strong relationships with certified refineries.",
+      image: "https://images.unsplash.com/photo-1501139083538-0139583c060f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      features: [
+        "Physical bullion trading",
+        "Digital gold investments",
+        "Futures & options trading",
+        "Hallmarked gold certification",
+        "Real-time market analysis",
+        "Secure storage facilities"
+      ],
+      stats: {
+        capacity: "₹500 Cr+ turnover",
+        experience: "8+ years",
+        satisfaction: "97%"
+      },
+      color: "yellow"
+    },
+    {
+      id: 5,
       title: "Distribution and Export",
       icon: Globe,
       description: "Pan-Maharashtra distribution network with international export capabilities for dairy and food products.",
@@ -128,6 +153,17 @@ function Services() {
     }
   ];
 
+  const getColorClasses = (color) => {
+    const classes = {
+      green: 'from-green-500 to-green-600',
+      orange: 'from-orange-500 to-orange-600',
+      blue: 'from-blue-500 to-blue-600',
+      purple: 'from-purple-500 to-purple-600',
+      yellow: 'from-amber-500 to-amber-600'
+    };
+    return classes[color] || classes.green;
+  };
+
   return (
     <div className="overflow-x-hidden">
       {/* Hero Section */}
@@ -146,7 +182,7 @@ function Services() {
         }`}>
           <h1 className="text-5xl md:text-6xl font-bold mb-4">Our Services</h1>
           <p className="text-xl text-green-50 max-w-3xl mx-auto">
-            Comprehensive dairy and food processing solutions tailored to your needs
+            Comprehensive dairy, food processing, and gold trading solutions tailored to your needs
           </p>
         </div>
       </section>
@@ -161,7 +197,7 @@ function Services() {
               What We <span className="text-green-600">Offer</span>
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              End-to-end solutions for dairy and food processing industry
+              End-to-end solutions for dairy, food processing, and gold trading industry
             </p>
             <div className="w-24 h-1 bg-green-600 mx-auto mt-6 rounded-full"></div>
           </div>
@@ -170,12 +206,7 @@ function Services() {
           <div className="grid lg:grid-cols-2 gap-8">
             {services.map((service, index) => {
               const Icon = service.icon;
-              const colorClasses = {
-                green: 'from-green-500 to-green-600',
-                orange: 'from-orange-500 to-orange-600',
-                blue: 'from-blue-500 to-blue-600',
-                purple: 'from-purple-500 to-purple-600'
-              };
+              const colorClasses = getColorClasses(service.color);
 
               return (
                 <div
@@ -194,7 +225,7 @@ function Services() {
                       alt={service.title}
                       className="w-full h-full object-cover"
                     />
-                    <div className={`absolute inset-0 bg-gradient-to-r ${colorClasses[service.color]} opacity-90`}></div>
+                    <div className={`absolute inset-0 bg-gradient-to-r ${colorClasses} opacity-90`}></div>
                   </div>
 
                   {/* Content */}
@@ -228,7 +259,7 @@ function Services() {
 
                     {/* Features */}
                     <div className="space-y-3 mb-8">
-                      {service.features.map((feature, idx) => (
+                      {service.features.slice(0, 4).map((feature, idx) => (
                         <div 
                           key={idx} 
                           className="flex items-center gap-3 transform transition-all duration-300 hover:translate-x-2"
@@ -243,7 +274,9 @@ function Services() {
                     {/* Capacity Badge */}
                     <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
                       <Shield className="w-4 h-4" />
-                      <span className="text-sm">Capacity: {service.stats.capacity}</span>
+                      <span className="text-sm">
+                        {service.id === 4 ? 'Turnover' : 'Capacity'}: {service.stats.capacity}
+                      </span>
                     </div>
 
                     {/* Learn More Button */}
@@ -362,7 +395,7 @@ function Services() {
         <div className="max-w-4xl mx-auto text-center px-4">
           <h2 className="text-4xl font-bold mb-6">Ready to Get Started?</h2>
           <p className="text-xl text-gray-300 mb-8">
-            Partner with us for reliable and high-quality dairy and food processing services
+            Partner with us for reliable and high-quality dairy, food processing, and gold trading services
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="group bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
@@ -384,6 +417,7 @@ function Services() {
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/FSSAI_Logo.svg/2560px-FSSAI_Logo.svg.png" alt="FSSAI" className="h-12" />
             <div className="text-2xl font-bold text-gray-400">AGMARK</div>
             <div className="text-2xl font-bold text-gray-400">MSME</div>
+            <div className="text-2xl font-bold text-gray-400">IBJA</div>
           </div>
         </div>
       </section>
