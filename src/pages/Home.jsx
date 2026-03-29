@@ -81,6 +81,46 @@ function Home() {
 
           {/* Cards Grid with Hover Effects */}
           <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+
+             {/* Gold  Card */}
+            <div className="group relative bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-400 to-orange-600 opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+              
+              <div className="h-48 overflow-hidden relative">
+                <img 
+                  src="https://static.toiimg.com/thumb/msid-120576608,width-1280,height-720,resizemode-4/120576608.jpg" 
+                  alt="Gold Images" 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 text-white">
+                  <Factory className="w-8 h-8 mb-2" />
+                </div>
+              </div>
+              
+              <div className="p-6">
+                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors">
+                  Gold Manufacturing and Gold Trading 
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Gold manufacturing blends artisanal craftsmanship with organized refining, while gold trading spans physical exchanges and financial instruments, driven by cultural and investment demand.
+                </p>
+                <ul className="space-y-2 text-sm text-gray-500">
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+                  Gold Manufacturing
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+                   Gold Trading
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+                  Industry Dynamics
+                  </li>
+                </ul>
+              </div>
+            </div>
             
             {/* Dairy Products Card */}
             <div className="group relative bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl">
@@ -157,46 +197,6 @@ function Home() {
                   <li className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
                     Beverage production
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-              {/* Gold  Card */}
-            <div className="group relative bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-400 to-orange-600 opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
-              
-              <div className="h-48 overflow-hidden relative">
-                <img 
-                  src="https://static.toiimg.com/thumb/msid-120576608,width-1280,height-720,resizemode-4/120576608.jpg" 
-                  alt="Gold Images" 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                <div className="absolute bottom-4 left-4 text-white">
-                  <Factory className="w-8 h-8 mb-2" />
-                </div>
-              </div>
-              
-              <div className="p-6">
-                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors">
-                  Gold Manufacturing and Gold Trading 
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  Gold manufacturing blends artisanal craftsmanship with organized refining, while gold trading spans physical exchanges and financial instruments, driven by cultural and investment demand.
-                </p>
-                <ul className="space-y-2 text-sm text-gray-500">
-                  <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
-                  Gold Manufacturing
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
-                   Gold Trading
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
-                  Industry Dynamics
                   </li>
                 </ul>
               </div>
